@@ -90,7 +90,6 @@ func (f *Freq)getDAGbyTree(src string) (dag []*FIS, idxs []int){
             }
             if r > 0 {
                 e := i + j + utf8.RuneLen(c)
-                //fi := FI{e, src[i:e], r, j == 0}
                 fi := FI{i, e, r, j == 0}
                 l.data = append(l.data, &fi)
             }
@@ -121,9 +120,6 @@ func (f *Freq)Cut(src string) (ret []string) {
     }
     // build return
     ret = make([]string, 0, src_len / 2)
-    //for d := cand[0]; d.i != d.j; d = cand[d.j] {
-    //    ret = append(ret, src[d.i:d.j])
-    //}
     oi := 0
     var d *FI
     for d = cand[0]; d.i != d.j; d = cand[d.j] {
