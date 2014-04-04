@@ -1,4 +1,4 @@
-package segm
+package gieba
 
 
 import "testing"
