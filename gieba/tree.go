@@ -19,7 +19,7 @@ type TreeItem struct {
 type Freq struct {
     data  *TreeItem
     total float64   // accumulation of all freq
-    minf  float64   // minimun of all freq
+    minf  float64   // minimum of all freq
     hmm   *HMM
 }
 
