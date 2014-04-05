@@ -14,8 +14,6 @@ import (
 
 func TestLoadJson(tst *testing.T) {
     infn := "/usr/share/gieba/data/prob_emit.json"
-    //infn := "/home/fure/golang/fgdwcfgo/segm/data/CN/prob_start.json"
-    //infn := "/home/fure/golang/fgdwcfgo/segm/data/CN/prob_trans.json"
     fin, err := os.Open(infn)
     if err != nil {
         log.Fatal(err)
@@ -24,10 +22,6 @@ func TestLoadJson(tst *testing.T) {
     dat, err := ioutil.ReadAll(fin)
     emit := make(map[string]map[string]float64)
     err = json.Unmarshal(dat, &emit)
-    //start := make(map[string]float64)
-    //err = json.Unmarshal(dat, &start)
-    //trans := make(map[string]map[string]float64)
-    //err = json.Unmarshal(dat, &trans)
     if err != nil {
         tst.Error(err)
     }
