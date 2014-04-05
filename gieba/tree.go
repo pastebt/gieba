@@ -82,9 +82,12 @@ func (f *Freq)getDAGbyTree(src string) (dag []*FIS, idxs []int){
         l := FIS{make([]*FI, 0)}
         for j, c := range src[i:] {
             q, ok := p.next[c]
-            if ! ok { break }
-            p = q
-            r := p.freq
+            //if ! ok { break }
+            r := 0.0
+            if ok {
+                p = q
+                r = p.freq
+            }
             if r == 0 && j == 0 {
                 r = f.minf  // always add first rune, even not found
             }
@@ -93,6 +96,7 @@ func (f *Freq)getDAGbyTree(src string) (dag []*FIS, idxs []int){
                 fi := FI{i, e, r, j == 0}
                 l.data = append(l.data, &fi)
             }
+            if ! ok { break }
         }
         dag[i] = &l
     }
