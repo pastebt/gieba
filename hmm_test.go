@@ -13,7 +13,7 @@ import (
 
 
 func TestLoadJson(tst *testing.T) {
-    infn := "/home/fure/golang/fgdwcfgo/segm/data/CN/prob_emit.json"
+    infn := "/usr/share/gieba/data/prob_emit.json"
     //infn := "/home/fure/golang/fgdwcfgo/segm/data/CN/prob_start.json"
     //infn := "/home/fure/golang/fgdwcfgo/segm/data/CN/prob_trans.json"
     fin, err := os.Open(infn)
@@ -39,7 +39,7 @@ func TestHMMNew(tst *testing.T) {
     if v == nil {
         tst.Error("Failed to new vitebi")
     }
-    v.LoadJsons("/home/fure/golang/fgdwcfgo/segm/data/CN/")
+    v.LoadJsons("/usr/share/gieba/data/")
     _, p, i := v.Viterbi("测试一下")
     show("path=", p)
     show("idx=", i)
@@ -47,7 +47,7 @@ func TestHMMNew(tst *testing.T) {
 
 
 func TestHMMCut(tst *testing.T) {
-    v := HMMNew("/home/fure/golang/fgdwcfgo/segm/data/CN/")
+    v := HMMNew("/usr/share/gieba/data/")
     okdata := [][]string {
         {"测试", "测试"},
         {"测试一下", "测试/ 一下"},

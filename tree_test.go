@@ -22,7 +22,7 @@ func TestIndex(tst *testing.T) {
 func TestCutNoHMM(tst *testing.T) {
     f := FreqNew()
     f.LoadFile("zh_dict.txt")
-    f.hmm = HMMNew("./")
+    f.hmm = HMMNew("/usr/share/gieba/data/")
     okdata := [][]string {
         {"我来到北京清华大学", "我/ 来到/ 北京/ 清华大学"},
         {"他来到了网易杭研大厦", "他/ 来到/ 了/ 网易/ 杭研/ 大厦"},
