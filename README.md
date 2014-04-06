@@ -1,19 +1,23 @@
-gieba
-=====
+#gieba
 
 jieba in golang
 
 jieba url: https://github.com/fxsjy/jieba
 
-install
-=====
+##install
 
-* cd $GOROOT/src/pkg
-* mkdir -p github.com/pastebt
-* cd github.com/pastebt
-* git clone https://github.com/pastebt/gieba
-* go test github.com/pastebt/gieba
+```bash
+$ go get github.com/pastebt/gieba
+```
 
-* mkdir /usr/share/gieba
-* cd /usr/share/gieba
-* ln -s $GOROOT/src/pkg/github.com/pastebt/gieba/data/ .
+##setup data
+```bash
+$ mkdir /usr/share/gieba
+$ cd /usr/share/gieba
+$ ln -s $GOROOT/src/pkg/github.com/pastebt/gieba/data/ .
+```
+
+##test
+```bash
+$ go test github.com/pastebt/gieba
+```
